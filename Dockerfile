@@ -94,6 +94,9 @@ RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyri
 RUN apt-get update && apt-get install google-cloud-sdk google-cloud-sdk-gke-gcloud-auth-plugin -y
 ENV USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
+# Make
+RUN apt-get install -y apt-utils make
+
 # Keep Original ENTRYPOINT
 WORKDIR /workspace
 ENTRYPOINT ["bazel"]
