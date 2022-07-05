@@ -97,6 +97,9 @@ ENV USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # Make
 RUN apt-get install -y apt-utils make
 
+# Git
+RUN apt-get install git
+
 # Keep Original ENTRYPOINT
 WORKDIR /workspace
 ENTRYPOINT ["bazel"]
