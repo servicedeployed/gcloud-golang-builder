@@ -76,6 +76,11 @@ RUN apt-get install -y apt-utils make
 # Git
 RUN apt-get install git
 
+# Helm
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+RUN chmod 700 get_helm.sh
+RUN ./get_helm.sh
+
 # Keep Original ENTRYPOINT
 WORKDIR /workspace
 ENTRYPOINT ["/bin/sh", "-c"]
